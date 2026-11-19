@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "name": { "type": "string" },
+    "cluster_name": { "type": "string" },
+    "cluster_uuid": { "type": "string" },
+    "version": {
+      "type": "object",
+      "properties": {
+        "number": { "type": "string" },
+        "distribution": { "type": "string" },
+        "build_type": { "type": "string" }
+      },
+      "required": ["number", "distribution"]
+    },
+    "tagline": { "type": "string" }
+  },
+  "required": ["name", "cluster_name", "version"]
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Вывод в консоль (чтобы видеть логи в IDEA) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Вывод в файл -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/test.log</file> <!-- Файл появится в папке logs вашего проекта -->
+        <append>false</append>     <!-- false = перезаписывать файл при каждом запуске -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Устанавливаем уровень логирования INFO -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
